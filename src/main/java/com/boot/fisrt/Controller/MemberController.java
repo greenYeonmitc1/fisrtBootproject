@@ -36,13 +36,13 @@ public class MemberController {
                 name(form.getName()).
                 role(Role.STUDENT)
                 .build();
-        service.join(member);
-//        try {
-//            service.join(member);
-//        }catch(IllegalStateException e){
-//            model.addAttribute("msg" , e.getMessage());
-//            return "members/joinForm";
-//        }
+        //service.join(member);
+        try {
+            service.join(member);
+        }catch(IllegalStateException e){
+            model.addAttribute("msg" , e.getMessage());
+            return "members/joinForm";
+        }
         log.info(" join member={}" , member);
         return "redirect:/member/members";
     }
