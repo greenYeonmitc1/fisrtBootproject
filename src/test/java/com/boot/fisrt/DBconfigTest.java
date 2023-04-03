@@ -11,6 +11,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Import;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.transaction.TransactionManager;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,8 +19,9 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.EntityManager;
 import javax.sql.DataSource;
 @ExtendWith(SpringExtension.class)
-@Import(SpringConfig.class)
+@Transactional
 @SpringBootTest
+@Rollback(value = false)
 public class DBconfigTest {
 //    @Autowired
 //    DataSource dataSource;  // db 객체

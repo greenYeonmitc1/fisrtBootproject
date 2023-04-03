@@ -5,9 +5,10 @@ import com.boot.fisrt.repository.MemberListRepository;
 import com.boot.fisrt.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-
+@Transactional(readOnly = true)  // 읽기
 public class MemberService {
 
     //private final MemberRepository dao = new MemberListRepository();
@@ -20,6 +21,8 @@ public class MemberService {
 
     // controller에서 사용할꺼니깐 public
     // 회원가입
+
+    @Transactional  // 읽기, 수정,삭제
     public Long join(Member member){
         validateMemberId(member);
         dao.save(member);
@@ -38,7 +41,13 @@ public class MemberService {
         return list;
     }
     // 회원한명탈퇴
+    @Transactional
     public void removeMember(Long id){
         dao.delete(id);
+    }
+
+    // 아이디로 회원찾기
+    public Member findMember(Long memberId){
+        return dao.findOne(memberId);
     }
 }
