@@ -35,8 +35,6 @@ public class DBconfigTest {
     @Test
     void db연동(){
         assertNotNull(entityManager);
-
-
     }
 
 
@@ -44,9 +42,9 @@ public class DBconfigTest {
     void 회원가입(){
         //setData();
         Member member1 = Member.builder()
-                .loginId("test7").
-                password("7777").
-                name("테스트7").
+                .loginId("test8").
+                password("8888").
+                name("테스트8").
                 role(Role.STUDENT)
                 .build();
 
