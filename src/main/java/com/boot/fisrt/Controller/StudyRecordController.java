@@ -80,7 +80,7 @@ public class StudyRecordController {
         model.addAttribute("record" , record);
 
 
-        return "/study/updateForm";
+        return "study/updateForm";
     }
     @PostMapping("/update")
     public String updateRecode(StudyForm form, Long id){
