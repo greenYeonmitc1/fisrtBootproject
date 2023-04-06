@@ -26,6 +26,7 @@ public class MemberJpaRepository implements MemberRepository{
 
     @Override
     public Member findOne(Long id) {
+
         return em.find(Member.class, id);
     }
 

@@ -1,10 +1,10 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="~{/fragments/header :: header}">
+<head th:replace="~{fragments/header :: header}">
 <body>
 
 <div class="row">
-  <div th:replace="~{/fragments/bodyHeader :: bodyHeader}"/></div>
+  <div th:replace="~{fragments/bodyHeader :: bodyHeader}"/></div>
 </div>
 <br>
 <div class="row mb-2">
@@ -24,7 +24,7 @@
     <div class="col"><button class="btn btn-dark" th:onclick="|deleteMember(${member.getId()})|">삭제2</button></div>
   </div>
 </th:block>
-<div th:replace="~{/fragments/footer :: footer}"> </div>
+<div th:replace="~{fragments/footer :: footer}"> </div>
 </body>
 </html>
 <script>

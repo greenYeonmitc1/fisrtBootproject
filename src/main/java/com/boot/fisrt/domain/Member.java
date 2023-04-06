@@ -8,6 +8,7 @@ import javax.persistence.*;
 @NoArgsConstructor(access = AccessLevel.PROTECTED) // jpa 객체를 만들기위해서는 기본생성자가 필요
 // 기본생성자 --> 빈객체 생성할 수 있음 (EntityManeger 가 Member 클래스 )
 @Entity
+@Table(name="member")
 public class Member {
 
    // protected Member(){}

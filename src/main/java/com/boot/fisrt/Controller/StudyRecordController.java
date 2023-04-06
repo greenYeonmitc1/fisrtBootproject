@@ -69,7 +69,7 @@ public class StudyRecordController {
         model.addAttribute("list" , list);
 
 
-        return "/study/list";
+        return "study/list";
     }
 
     @GetMapping("{keyId}")

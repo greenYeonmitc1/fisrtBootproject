@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public interface StudyRecordRepository extends JpaRepository<StudyRecord,Long> {
 
-    @Query(value="select * from Member m , study_record r where m.member_id = r.member_id", nativeQuery = true)
+    @Query(value="select * from member m , study_record r where m.member_id = r.member_id", nativeQuery = true)
     List<StudyRecord> selectAll();
 
 }
